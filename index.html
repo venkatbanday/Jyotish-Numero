@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free Vedic horoscope, numerology, name analysis and mobile number suitability check. No sign-up. Built by Venkateswara Rao Banday.">
+  <meta name="description" content="Free Vedic horoscope, numerology, name analysis and mobile number suitability check (Vedic + Chinese Bagua). No sign-up. Built by Venkateswara Rao Banday.">
   <meta name="author" content="Venkateswara Rao Banday">
   <meta name="theme-color" content="#0d0820">
-  <title>Jyotish Numero – Free Horoscope & Numerology</title>
+  <title>Jyotish Numero – Free Horoscope &amp; Numerology</title>
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; background: #0d0820; color: #f3eeff; font: 16px/1.5 system-ui, sans-serif; }
@@ -23,11 +23,11 @@
   </div>
   <iframe id="app" title="Jyotish Numero horoscope and numerology app" hidden></iframe>
   <script>
-    // Load the full calculator version, before the banner-only landing page replaced it.
-    const appSource = "https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html";
-    fetch(appSource)
+    // Load the full calculator app from the stable commit that contained the complete attached app.
+    const source = "https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html";
+    fetch(source)
       .then(response => {
-        if (!response.ok) throw new Error("Could not retrieve the app");
+        if (!response.ok) throw new Error("App source unavailable");
         return response.text();
       })
       .then(html => {
@@ -38,8 +38,8 @@
       })
       .catch(() => {
         document.getElementById("status").innerHTML =
-          '<h1>Jyotish Numero</h1><p>The app could not be loaded. Please check your connection and reload.</p>' +
-          '<p><a href="https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html">Open the calculator source</a></p>';
+          '<h1>Jyotish Numero</h1><p>The app could not be loaded. Please check your internet connection and reload.</p>' +
+          '<p><a href="https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html">Open the calculator directly</a></p>';
       });
   </script>
 </body>
