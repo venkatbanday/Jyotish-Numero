@@ -12,10 +12,12 @@ A free, single-page web app for **Vedic horoscope** and **numerology**. Enter yo
 |---|---|
 | **Core numerology** | Driver (Mulank), Conductor (Bhagyank), Chaldean name number, soul urge, personality number |
 | **Driver–Conductor combination** | Star rating, meaning, and life/career insights for all 81 combinations |
-| **Divine meaning** | Ruling planet, deity, mantra, lucky colour, day and gemstone |
+| **Divine meaning** | Ruling planet, deity, mantra, meaning, remedy, lucky colour, day and gemstone for Driver and Conductor |
 | **Lo Shu grid** | Visual grid with missing numbers to strengthen |
 | **Name correction** | Spelling variants whose total suits your Driver and Conductor numbers |
-| **Mobile number analysis** | Benefic/Malefic reading of every digit pair, total number, and best-suited totals |
+| **Mobile number analysis** | Clear Suitable / Partly suitable / Not suitable verdict with a score, number meaning, divine support, pair-by-pair reading and best-suited totals |
+| **Chinese numerology** | Bagua Shuzi (8-star) analysis of mobile numbers, plus Chinese zodiac and traditional lucky numbers |
+| **Missing-number remedies** | Step-by-step remedies for every number missing from your Lo Shu grid |
 | **Vedic birth chart** | Lagna (Ascendant), Moon sign (Rashi), Sun sign, Nakshatra and pada (sidereal, Lahiri ayanamsa) |
 | **Vimshottari Dasha** | Full life-period timeline with the currently running period highlighted |
 | **Place search** | Search any town or city worldwide; latitude, longitude and time zone (including daylight saving) are filled automatically |
