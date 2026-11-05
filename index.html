@@ -1,168 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Free Vedic horoscope, numerology, name analysis and mobile number suitability check. No signup required." />
-  <meta name="author" content="Venkateswara Rao Banday" />
-  <meta property="og:title" content="Jyotish Numero – Free Horoscope & Numerology" />
-  <meta property="og:description" content="Free Vedic horoscope, numerology, name analysis and mobile number suitability check. No signup required." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#201a6c" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Vedic horoscope, numerology, name analysis and mobile number suitability check. No sign-up. Built by Venkateswara Rao Banday.">
+  <meta name="author" content="Venkateswara Rao Banday">
+  <meta name="theme-color" content="#0d0820">
   <title>Jyotish Numero – Free Horoscope & Numerology</title>
   <style>
-    :root {
-      --bg-1: #1d1b70;
-      --bg-2: #4d2a7d;
-      --bg-3: #7b2f6e;
-      --gold: #f4cb69;
-      --gold-2: #f5d98e;
-      --white: #f5f3ff;
-      --muted: #d9d0f3;
-      --shadow: rgba(0, 0, 0, 0.2);
-    }
-
     * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
-      color: var(--white);
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,0.65) 0 1.5px, transparent 2px),
-        radial-gradient(circle, rgba(255,204,92,0.8) 0 1.8px, transparent 2px),
-        radial-gradient(circle, rgba(255,255,255,0.7) 0 1.5px, transparent 2px),
-        radial-gradient(circle, rgba(255,204,92,0.9) 0 1.8px, transparent 2px);
-      background-size: 260px 220px;
-      background-position: 10% 24%, 78% 16%, 16% 78%, 74% 82%;
-      opacity: 0.9;
-    }
-
-    .hero {
-      width: min(1400px, 100%);
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: clamp(36px, 6vw, 70px) 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .content {
-      text-align: center;
-      width: min(1280px, 100%);
-    }
-
-    h1 {
-      margin: 0;
-      font-weight: 900;
-      letter-spacing: -0.08em;
-      line-height: 0.95;
-      font-size: clamp(5rem, 12vw, 16rem);
-      color: var(--gold);
-      text-shadow: 0 0 28px rgba(255, 216, 112, 0.12);
-      font-stretch: expanded;
-    }
-
-    .line {
-      display: block;
-      margin: 0;
-      font-weight: 300;
-      color: rgba(255,255,255,0.95);
-      font-size: clamp(1.5rem, 3vw, 3.8rem);
-      line-height: 1.3;
-      letter-spacing: 0.01em;
-    }
-
-    .line + .line {
-      margin-top: 8px;
-    }
-
-    .line .separator {
-      color: rgba(255,255,255,0.7);
-      margin: 0 0.2em;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: clamp(28px, 3vw, 48px);
-      padding: clamp(14px, 1.8vw, 22px) clamp(28px, 4vw, 54px);
-      border-radius: 999px;
-      background: linear-gradient(180deg, #f3d27e 0%, #f2c754 100%);
-      color: #2d1e51;
-      font-weight: 900;
-      font-size: clamp(2rem, 3vw, 4.2rem);
-      line-height: 1;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
-    }
-
-    .byline {
-      margin-top: clamp(28px, 4vw, 42px);
-      font-size: clamp(1.5rem, 3vw, 3.1rem);
-      font-weight: 500;
-      color: rgba(255,255,255,0.95);
-      letter-spacing: 0.01em;
-    }
-
-    .byline .name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      font-weight: 700;
-      color: #f8ecb0;
-      text-shadow: 0 0 16px rgba(255, 208, 103, 0.25);
-    }
-
-    @media (max-width: 700px) {
-      .hero { padding-top: 30px; padding-bottom: 30px; }
-      .line { letter-spacing: 0.02em; }
-      .line .separator { margin: 0 0.1em; }
-    }
+    html, body { margin: 0; min-height: 100%; background: #0d0820; color: #f3eeff; font: 16px/1.5 system-ui, sans-serif; }
+    #app { display: block; width: 100%; min-height: 100vh; border: 0; background: #0d0820; }
+    #status { max-width: 720px; margin: 12vh auto; padding: 24px; text-align: center; }
+    #status h1 { color: #ffd27a; }
+    #status a { color: #c4b5fd; }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="content">
-      <h1>JYOTISH NUMERO</h1>
-
-      <p class="line">
-        <span>Free Horoscope</span>
-        <span class="separator">|</span>
-        <span>Numerology</span>
-      </p>
-
-      <p class="line">
-        <span>Mobile Number Check</span>
-        <span class="separator">|</span>
-        <span>Name Analysis</span>
-        <span class="separator">|</span>
-        <span>Lo Shu</span>
-        <span class="separator">|</span>
-        <span>Dasha</span>
-      </p>
-
-      <div class="cta">100% Free - No Sign-up</div>
-
-      <div class="byline">Built by <span class="name">Venkateswara Rao Banday</span></div>
-    </div>
+  <div id="status" role="status" aria-live="polite">
+    <h1>Loading Jyotish Numero…</h1>
+    <p>Opening the horoscope and numerology app.</p>
   </div>
+  <iframe id="app" title="Jyotish Numero horoscope and numerology app" hidden></iframe>
+  <script>
+    // Load the full calculator version, before the banner-only landing page replaced it.
+    const appSource = "https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html";
+    fetch(appSource)
+      .then(response => {
+        if (!response.ok) throw new Error("Could not retrieve the app");
+        return response.text();
+      })
+      .then(html => {
+        const frame = document.getElementById("app");
+        frame.srcdoc = html;
+        frame.hidden = false;
+        document.getElementById("status").remove();
+      })
+      .catch(() => {
+        document.getElementById("status").innerHTML =
+          '<h1>Jyotish Numero</h1><p>The app could not be loaded. Please check your connection and reload.</p>' +
+          '<p><a href="https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html">Open the calculator source</a></p>';
+      });
+  </script>
 </body>
 </html>
