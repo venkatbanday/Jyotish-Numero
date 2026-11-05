@@ -1,74 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jyotish Numero – free horoscope and numerology tools, with mobile number checks and name analysis.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free Vedic horoscope, numerology, name analysis and mobile number suitability check. No signup required." />
+  <meta name="author" content="Venkateswara Rao Banday" />
+  <meta property="og:title" content="Jyotish Numero – Free Horoscope & Numerology" />
+  <meta property="og:description" content="Free Vedic horoscope, numerology, name analysis and mobile number suitability check. No signup required." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#201a6c" />
   <title>Jyotish Numero – Free Horoscope & Numerology</title>
   <style>
+    :root {
+      --bg-1: #1d1b70;
+      --bg-2: #4d2a7d;
+      --bg-3: #7b2f6e;
+      --gold: #f4cb69;
+      --gold-2: #f5d98e;
+      --white: #f5f3ff;
+      --muted: #d9d0f3;
+      --shadow: rgba(0, 0, 0, 0.2);
+    }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; font-family: system-ui, sans-serif; background: #201a6c; color: #f3effe; }
-    .hero { position: relative; min-height: 100vh; display: grid; place-items: center; overflow: hidden; padding: 48px 20px; text-align: center; background: linear-gradient(135deg, #201a6c 0%, #49227f 55%, #8d3b78 100%); }
-    .hero::before { content: "✦      ·              ✦                  ·       ✦"; position: absolute; inset: 8% 4%; color: #f5d36a; font-size: clamp(18px, 3vw, 32px); letter-spacing: 8vw; opacity: .8; pointer-events: none; }
-    .hero-content { position: relative; max-width: 1200px; }
-    h1 { margin: 0; color: #f2c96b; font-size: clamp(2.8rem, 9vw, 6rem); line-height: 1.05; letter-spacing: -.055em; font-weight: 850; }
-    .subtitle { margin: 20px 0 0; font-size: clamp(1.2rem, 3.2vw, 2.8rem); line-height: 1.5; color: #f3effe; }
-    .features { margin-top: 8px; color: #d7cdf8; font-size: clamp(1rem, 2.5vw, 2rem); }
-    .pill { display: inline-block; margin-top: 38px; padding: 14px 34px; border-radius: 999px; background: #f2c65f; color: #29134f; font-size: clamp(1.3rem, 3.5vw, 2.4rem); font-weight: 800; }
-    .byline {
-      margin: 34px 0 0;
-      font-size: clamp(1.1rem, 2.5vw, 1.8rem);
-      letter-spacing: 0.02em;
-      color: rgba(255,255,255,0.96);
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
+      color: var(--white);
     }
-    .author-name {
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.65) 0 1.5px, transparent 2px),
+        radial-gradient(circle, rgba(255,204,92,0.8) 0 1.8px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,0.7) 0 1.5px, transparent 2px),
+        radial-gradient(circle, rgba(255,204,92,0.9) 0 1.8px, transparent 2px);
+      background-size: 260px 220px;
+      background-position: 10% 24%, 78% 16%, 16% 78%, 74% 82%;
+      opacity: 0.9;
+    }
+
+    .hero {
+      width: min(1400px, 100%);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: clamp(36px, 6vw, 70px) 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      text-align: center;
+      width: min(1280px, 100%);
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      line-height: 0.95;
+      font-size: clamp(5rem, 12vw, 16rem);
+      color: var(--gold);
+      text-shadow: 0 0 28px rgba(255, 216, 112, 0.12);
+      font-stretch: expanded;
+    }
+
+    .line {
+      display: block;
+      margin: 0;
+      font-weight: 300;
+      color: rgba(255,255,255,0.95);
+      font-size: clamp(1.5rem, 3vw, 3.8rem);
+      line-height: 1.3;
+      letter-spacing: 0.01em;
+    }
+
+    .line + .line {
+      margin-top: 8px;
+    }
+
+    .line .separator {
+      color: rgba(255,255,255,0.7);
+      margin: 0 0.2em;
+    }
+
+    .cta {
       display: inline-block;
-      margin-left: 0.15em;
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      font-style: italic;
-      background: linear-gradient(120deg, #fff7d1 0%, #f9d777 28%, #fff3c4 60%, #f5c75c 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 18px rgba(255, 214, 102, 0.28);
-      letter-spacing: 0.04em;
+      margin-top: clamp(28px, 3vw, 48px);
+      padding: clamp(14px, 1.8vw, 22px) clamp(28px, 4vw, 54px);
+      border-radius: 999px;
+      background: linear-gradient(180deg, #f3d27e 0%, #f2c754 100%);
+      color: #2d1e51;
+      font-weight: 900;
+      font-size: clamp(2rem, 3vw, 4.2rem);
+      line-height: 1;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
     }
-    .app-section { min-height: 100vh; padding: 24px 12px 40px; background: #0d0820; }
-    .app-section h2 { max-width: 1000px; margin: 0 auto 12px; color: #ffd27a; font-size: 1.25rem; }
-    #app-frame { display: block; width: min(100%, 1100px); height: 100vh; min-height: 900px; margin: 0 auto; border: 1px solid #4b3a8f; border-radius: 12px; background: #0d0820; }
-    #load-error { display: none; max-width: 900px; margin: 16px auto; padding: 16px; border: 1px solid #fb7185; border-radius: 10px; color: #fff; }
-    @media (max-width: 600px) { .hero { min-height: 82vh; } #app-frame { min-height: 1100px; } }
+
+    .byline {
+      margin-top: clamp(28px, 4vw, 42px);
+      font-size: clamp(1.5rem, 3vw, 3.1rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.95);
+      letter-spacing: 0.01em;
+    }
+
+    .byline .name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 700;
+      color: #f8ecb0;
+      text-shadow: 0 0 16px rgba(255, 208, 103, 0.25);
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding-top: 30px; padding-bottom: 30px; }
+      .line { letter-spacing: 0.02em; }
+      .line .separator { margin: 0 0.1em; }
+    }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
+  <div class="hero">
+    <div class="content">
       <h1>JYOTISH NUMERO</h1>
-      <p class="subtitle">Free Horoscope <span aria-hidden="true">|</span> Numerology</p>
-      <p class="features">Mobile Number Check <span aria-hidden="true">|</span> Name Analysis <span aria-hidden="true">|</span> Lo Shu <span aria-hidden="true">|</span> Dasha</p>
-      <div class="pill">100% Free&nbsp; - &nbsp;No Sign-up</div>
-      <p class="byline">Built by <span class="author-name">Venkateswara Rao Banday</span></p>
+
+      <p class="line">
+        <span>Free Horoscope</span>
+        <span class="separator">|</span>
+        <span>Numerology</span>
+      </p>
+
+      <p class="line">
+        <span>Mobile Number Check</span>
+        <span class="separator">|</span>
+        <span>Name Analysis</span>
+        <span class="separator">|</span>
+        <span>Lo Shu</span>
+        <span class="separator">|</span>
+        <span>Dasha</span>
+      </p>
+
+      <div class="cta">100% Free - No Sign-up</div>
+
+      <div class="byline">Built by <span class="name">Venkateswara Rao Banday</span></div>
     </div>
-  </header>
-  <main class="app-section" id="app">
-    <h2>Explore your horoscope and numerology</h2>
-    <div id="load-error" role="alert">The app could not be loaded. Please check your internet connection and reload this page.</div>
-    <iframe id="app-frame" title="Jyotish Numero horoscope and numerology app" loading="eager" sandbox="allow-scripts allow-forms allow-same-origin allow-modals allow-popups"></iframe>
-  </main>
-  <script>
-    const source = "https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html";
-    fetch(source)
-      .then(response => {
-        if (!response.ok) throw new Error("App source unavailable");
-        return response.text();
-      })
-      .then(html => {
-        document.getElementById("app-frame").srcdoc = html;
-      })
-      .catch(() => {
-        document.getElementById("load-error").style.display = "block";
-      });
-  </script>
+  </div>
 </body>
 </html>
