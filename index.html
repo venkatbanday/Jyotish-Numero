@@ -15,7 +15,25 @@
     .subtitle { margin: 20px 0 0; font-size: clamp(1.2rem, 3.2vw, 2.8rem); line-height: 1.5; color: #f3effe; }
     .features { margin-top: 8px; color: #d7cdf8; font-size: clamp(1rem, 2.5vw, 2rem); }
     .pill { display: inline-block; margin-top: 38px; padding: 14px 34px; border-radius: 999px; background: #f2c65f; color: #29134f; font-size: clamp(1.3rem, 3.5vw, 2.4rem); font-weight: 800; }
-    .byline { margin: 34px 0 0; font-size: clamp(1.1rem, 2.5vw, 1.8rem); }
+    .byline {
+      margin: 34px 0 0;
+      font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.96);
+    }
+    .author-name {
+      display: inline-block;
+      margin-left: 0.15em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      font-style: italic;
+      background: linear-gradient(120deg, #fff7d1 0%, #f9d777 28%, #fff3c4 60%, #f5c75c 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 18px rgba(255, 214, 102, 0.28);
+      letter-spacing: 0.04em;
+    }
     .app-section { min-height: 100vh; padding: 24px 12px 40px; background: #0d0820; }
     .app-section h2 { max-width: 1000px; margin: 0 auto 12px; color: #ffd27a; font-size: 1.25rem; }
     #app-frame { display: block; width: min(100%, 1100px); height: 100vh; min-height: 900px; margin: 0 auto; border: 1px solid #4b3a8f; border-radius: 12px; background: #0d0820; }
@@ -30,7 +48,7 @@
       <p class="subtitle">Free Horoscope <span aria-hidden="true">|</span> Numerology</p>
       <p class="features">Mobile Number Check <span aria-hidden="true">|</span> Name Analysis <span aria-hidden="true">|</span> Lo Shu <span aria-hidden="true">|</span> Dasha</p>
       <div class="pill">100% Free&nbsp; - &nbsp;No Sign-up</div>
-      <p class="byline">Built by Venkateswara Rao Banday</p>
+      <p class="byline">Built by <span class="author-name">Venkateswara Rao Banday</span></p>
     </div>
   </header>
   <main class="app-section" id="app">
@@ -39,8 +57,6 @@
     <iframe id="app-frame" title="Jyotish Numero horoscope and numerology app" loading="eager" sandbox="allow-scripts allow-forms allow-same-origin allow-modals allow-popups"></iframe>
   </main>
   <script>
-    // Load the working app version that preceded the banner-only replacement.
-    // The pinned commit keeps this source stable and avoids duplicating the app code here.
     const source = "https://raw.githubusercontent.com/venkatbanday/Jyotish-Numero/13aae4976d11cac01ee4a1f090fa77f8493055c1/index.html";
     fetch(source)
       .then(response => {
