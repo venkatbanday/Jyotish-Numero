@@ -76,7 +76,7 @@ This app is for **guidance, self-reflection and entertainment only**. It is not 
 
 ## About the builder
 
-**Venkateswara Rao Banday** – Multi-sector Program and Operations Leader with working rights in the UK and India, looking for roles in London. I build apps using AI and share them freely. Referrals and introductions are very welcome: [LinkedIn](https://www.linkedin.com/in/venkateswararao-banday)
+**Venkateswara Rao Banday** – Multi-sector Program and Operations Leader with working rights in the UK and India, looking for roles in London. I build apps using AI and share them freely. Referrals and introductions are very welcome: LinkedIn: [https://www.linkedin.com/in/venkateswararao-banday](https://www.linkedin.com/in/venkateswararao-banday)
 
 ## Credits
 
